@@ -13,6 +13,5 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run: npm test
       - run: npm run lint
       - run: npm run security
