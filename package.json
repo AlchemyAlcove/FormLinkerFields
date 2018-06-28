@@ -10,27 +10,56 @@
   },
   "main": "dist/index.js",
   "scripts": {
+    "start": "nodemon --watch assets/ --watch webpack.config.js --watch package.json ./node_modules/.bin/webpack-dev-server --env",
     "lint": "eslint index.js",
+    "lint:css": "stylelint \"./**/*.style.js\"",
     "build": "babel index.js --out-dir dist",
+    "performance": "node_modules/.bin/webpack --env.performance --env.production --progress",
+    "production": "node_modules/.bin/webpack --env.production --progress",
     "security": "node_modules/nsp/bin/nsp check"
   },
   "dependencies": {
+    "babel-polyfill": ">= 6",
     "form-linker": ">= 0.2.2",
-    "lodash": ">= 4"
+    "lodash": ">= 4",
+    "react": ">= 15",
+    "react-dom": ">= 15",
+    "styled-components": ">= 1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-eslint": "8.2.2",
+    "babel-loader": "7.1.4",
     "babel-plugin-array-includes": "2.0.3",
+    "babel-plugin-lodash": "3.3.2",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
+    "babel-plugin-transform-object-assign": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
     "babel-register": "6.26.0",
+    "clean-webpack-plugin": "0.1.19",
     "eslint": "4.18.2",
+    "eslint-loader": "2.0.0",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.9.0",
     "eslint-plugin-node": "6.0.1",
     "eslint-plugin-promise": "3.7.0",
+    "eslint-plugin-react": "7.7.0",
     "eslint-plugin-standard": "3.0.1",
-    "nsp": "3.2.1"
+    "html-webpack-plugin": "3.2.0",
+    "lodash-webpack-plugin": "0.11.5",
+    "nodemon": "1.17.4",
+    "nsp": "3.2.1",
+    "stylelint": "9.1.1",
+    "stylelint-config-recommended": "2.1.0",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-custom-processor-loader": "0.5.0",
+    "stylelint-processor-styled-components": "1.3.0",
+    "webpack": "4.8.1",
+    "webpack-bundle-analyzer": "2.11.2",
+    "webpack-cli": "2.1.3",
+    "webpack-dev-server": "3.1.4"
   }
 }

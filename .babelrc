@@ -1,4 +1,26 @@
 {
-  "presets": [["env", {"modules": false}]],
-  "plugins": ["transform-es2015-modules-commonjs", "array-includes"]
+  "presets": [
+    [
+      "env", {
+        "modules": false,
+        "targets": {
+          "browsers": [
+	    "last 2 versions",
+	    "ie >= 9",
+            "safari >= 4",
+            "chrome >= 55",
+            "firefox >= 50"
+	  ]
+        }
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    "lodash",
+    "transform-es2015-modules-commonjs",
+    "array-includes",
+    "transform-object-assign",
+    "transform-object-rest-spread"
+  ]
 }
